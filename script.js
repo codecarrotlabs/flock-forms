@@ -18,7 +18,7 @@ function postDataToWebhook() {
   var myJSONStr = payload = {
     "text": "New user filled the form on website",
     "attachments": [{
-      //"description": "A little longer description", //optional
+      "description": "A little longer description", //optional
       "views": {
         "flockml": "<flockml><strong>Name:</strong> " + userName + "<br/><strong>Email Address:</strong> " + userEmail + "<br/><strong>Mobile: </strong> " + userMobile + "</flockml>"
       }
