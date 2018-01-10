@@ -8,11 +8,11 @@
 
   function postDataToWebhook() {
       //get the values needed from the passed in json object
-      var userName = fname;
-      var userEmail = femail;
-      var userMobile = fnumber;
+      var userName = document.getElementById("fname").value;
+      var userEmail = document.getElementById("femail").value;
+      var userMobile = document.getElementById("fnumber").value;
       //url to your webhook
-      var webHookUrl = fhook;
+      var webHookUrl = document.getElementById("fhook").value;
 
       console.log(webHookUrl);
 
