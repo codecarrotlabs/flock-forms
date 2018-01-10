@@ -1,3 +1,10 @@
+function clearFields() {
+  document.getElementById("fname").value = "";
+  document.getElementById("femail").value = "";
+  document.getElementById("fnumber").value = "";
+  document.getElementById("fhook").value = "";
+}
+
 function postDataToWebhook() {
   //get the values needed from the passed in json object
   var userName = document.getElementById("fname").value;
@@ -23,6 +30,9 @@ function postDataToWebhook() {
   oReq.open("POST", webHookUrl,true);
   oReq.setRequestHeader('Content-Type', 'application/json');
   oReq.send(JSON.stringify(myJSONStr));
+
+// Clearing the fields after submiting the form
+  clearFields();
 }
 
 //callback method after webhook is executed
