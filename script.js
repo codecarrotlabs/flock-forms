@@ -6,8 +6,6 @@ function postDataToWebhook() {
   //url to your webhook
   var webHookUrl = document.getElementById("fhook").value;
 
-  console.log(userName);
-  
   //https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
   var oReq = new XMLHttpRequest();
   var myJSONStr = payload = {
