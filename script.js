@@ -1,19 +1,24 @@
+const fname = document.getElementById("fname");
+const femail = document.getElementById("femail");
+const fnumber = document.getElementById("fnumber");
+const fhook = document.getElementById("fhook");
+
 function postDataToWebhook() {
   //get the values needed from the passed in json object
-  var userName= "Yashu";
-  var userPlatform= "Windows";
-  var userEmail= "test@gmail.com";
+  var userName= fname;
+  var userEmail = femail;
+  var userMobile = fnumber;
   //url to your webhook
-  var webHookUrl = "https://api.flock.com/hooks/sendMessage/d1e77e1b-29ec-4a01-a701-74120b214cf6";
+  var webHookUrl = fhook;
   
   //https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
   var oReq = new XMLHttpRequest();
   var myJSONStr = payload = {
-    "text": "New user filled a form",
+    "text": "New user filled the form on website",
     "attachments": [{
-      // "description": "A little longer description", //optional
+      //"description": "A little longer description", //optional
       "views": {
-        "flockml": "<flockml><strong>Name:</strong> " + userName + "<br/><strong>Email Address:</strong> " + userEmail + "<br/><strong>Platform: </strong> " + userPlatform + "</flockml>"
+        "flockml": "<flockml><strong>Name:</strong> " + userName + "<br/><strong>Email Address:</strong> " + userEmail + "<br/><strong>Mobile: </strong> " + userMobile + "</flockml>"
       }
     }]
   };
@@ -24,6 +29,7 @@ function postDataToWebhook() {
   oReq.setRequestHeader('Content-Type', 'application/json');
   oReq.send(JSON.stringify(myJSONStr));
 }
+
 //callback method after webhook is executed
 function reqListener () {
   console.log(this.responseText);
