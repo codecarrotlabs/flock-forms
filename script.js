@@ -18,7 +18,7 @@ function postDataToWebhook() {
     "attachments": [{
       //"description": "A little longer description", //optional
       "views": {
-        "flockml": "<flockml><strong>Name:</strong> " + userName + "<br/><strong>Email Address:</strong> " + userEmail + "<br/><strong>Mobile: </strong> " + userMobile + "</flockml>"
+        "flockml": "<flockml><strong>Name:</strong> " + fname + "<br/><strong>Email Address:</strong> " + femail + "<br/><strong>Mobile: </strong> " + fnumber + "</flockml>"
       }
     }]
   };
