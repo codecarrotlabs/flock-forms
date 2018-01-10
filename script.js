@@ -1,7 +1,7 @@
-const fname = document.getElementById("fname").value;
-const femail = document.getElementById("femail").value;
-const fnumber = document.getElementById("fnumber").value;
-const fhook = document.getElementById("fhook").value;
+var fname = document.getElementById("fname").value;
+var femail = document.getElementById("femail").value;
+var fnumber = document.getElementById("fnumber").value;
+var fhook = document.getElementById("fhook").value;
 
 function postDataToWebhook() {
   //get the values needed from the passed in json object
