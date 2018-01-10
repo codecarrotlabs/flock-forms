@@ -1,15 +1,12 @@
-var fname = document.getElementById("fname").value;
-var femail = document.getElementById("femail").value;
-var fnumber = document.getElementById("fnumber").value;
-var fhook = document.getElementById("fhook").value;
-
 function postDataToWebhook() {
   //get the values needed from the passed in json object
-  var userName= fname;
-  var userEmail = femail;
-  var userMobile = fnumber;
+  var userName = document.getElementById("fname").value;
+  var userEmail = document.getElementById("femail").value;
+  var userMobile = document.getElementById("fnumber").value;
   //url to your webhook
-  var webHookUrl = fhook;
+  var webHookUrl = document.getElementById("fhook").value;
+
+  console.log(webHookUrl);
   
   //https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
   var oReq = new XMLHttpRequest();
@@ -18,7 +15,7 @@ function postDataToWebhook() {
     "attachments": [{
       //"description": "A little longer description", //optional
       "views": {
-        "flockml": "<flockml><strong>Name:</strong> " + fname + "<br/><strong>Email Address:</strong> " + femail + "<br/><strong>Mobile: </strong> " + fnumber + "</flockml>"
+        "flockml": "<flockml><strong>Name:</strong> " + userName + "<br/><strong>Email Address:</strong> " + userEmail + "<br/><strong>Mobile: </strong> " + userMobile + "</flockml>"
       }
     }]
   };
